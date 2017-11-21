@@ -1,0 +1,55 @@
+/* site.css */
+body {
+    background-color: #AAA;
+}
+
+span.step {
+    position: relative;
+    /*debug*/
+    border: solid 1px #000;
+    overflow: hidden;
+    display: inline-block;
+}
+span.step > h1 {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    
+    font-style: bold;
+    font-variant: small-caps;
+    font-size: 20px;
+    color: #00A;
+}
+span.step > h2 {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    margin: 0;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 15px;
+    color: #00A;
+}
+span.step > img {
+    width: 300px;
+    height: auto;
+}
+
+
+div.stage {
+    position: relative;
+    background-color: #FFF;
+    border: solid 1px #FFF;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+div.stage > img {
+    width: 300px;
+    height: auto;
+}
+div.stage > h1 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
