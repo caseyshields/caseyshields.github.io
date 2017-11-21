@@ -5,12 +5,12 @@ body {
 
 span.step {
     position: relative;
-    /*debug*/
-    border: solid 1px #000;
+    /*border: solid 1px #000;*/
     overflow: hidden;
     display: inline-block;
+    margin:auto;
 }
-span.step > h1 {
+span.step > p:first-of-type {
     position: absolute;
     top: 5%;
     left: 5%;
@@ -20,7 +20,7 @@ span.step > h1 {
     font-size: 20px;
     color: #00A;
 }
-span.step > h2 {
+span.step > p:last-of-type {
     position: absolute;
     bottom: 5%;
     left: 5%;
@@ -48,7 +48,7 @@ div.stage > img {
     width: 300px;
     height: auto;
 }
-div.stage > h1 {
+div.stage > div {
     position: absolute;
     top: 0%;
     left: 0%;
