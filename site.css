@@ -1,55 +1,53 @@
 /* site.css */
 body {
     background-color: #AAA;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: #00A;
+}
+
+header {
+    text-align: center;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-left: auto;
+    width: 500px;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+
+div.stage {
+    position: relative;
+    background-color: #FFF;
+    /*border: solid 1px #FFF;*/
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
 }
 
 span.step {
     position: relative;
     /*border: solid 1px #000;*/
-    overflow: hidden;
     display: inline-block;
-    margin:auto;
+    
 }
 span.step > p:first-of-type {
     position: absolute;
     top: 5%;
     left: 5%;
-    
+    margin: 0;
     font-style: bold;
-    font-variant: small-caps;
     font-size: 20px;
-    color: #00A;
 }
 span.step > p:last-of-type {
     position: absolute;
     bottom: 5%;
     left: 5%;
     margin: 0;
-    font-style: normal;
-    font-variant: normal;
-    font-size: 15px;
-    color: #00A;
+    
 }
 span.step > img {
     width: 300px;
-    height: auto;
-}
-
-
-div.stage {
-    position: relative;
-    background-color: #FFF;
-    border: solid 1px #FFF;
-    border-radius: 5px;
-    margin: 5px;
-    padding: 5px;
-}
-div.stage > img {
-    width: 300px;
-    height: auto;
-}
-div.stage > div {
-    position: absolute;
-    top: 0%;
-    left: 0%;
+    height: 300px;
 }
