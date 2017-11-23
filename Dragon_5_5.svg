@@ -717,7 +717,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.64"
-     inkscape:cx="196.582"
+     inkscape:cx="303.90962"
      inkscape:cy="405.23896"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -742,7 +742,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -867,18 +867,6 @@
        d="m 469.95733,575.12752 97.17856,-97.1786"
        id="path8754"
        inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40.00000381px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#6f98f2;fill-opacity:0.67843137;stroke:#6f98f2;stroke-width:0.64771587px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.67843137"
-       x="66.456673"
-       y="422.40448"
-       id="text5445-8-4"
-       sodipodi:linespacing="125%"><tspan
-         style="stroke-width:0.64771587px"
-         sodipodi:role="line"
-         id="tspan5447-4-8"
-         x="66.456673"
-         y="422.40448">Stretch and flatten center Flap</tspan></text>
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#6388d8;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.76002179;marker-end:url(#marker7102-9-0-8-5)"
        d="m 332.53073,712.56192 c -70.4342,14.706 -117.6548,58.7346 -137.4304,137.4304"

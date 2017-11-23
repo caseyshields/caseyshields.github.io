@@ -552,7 +552,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.90509668"
-     inkscape:cx="203.01336"
+     inkscape:cx="370.89888"
      inkscape:cy="351.67049"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -719,42 +719,5 @@
        inkscape:connector-curvature="0"
        inkscape:transform-center-x="-69.33702"
        inkscape:transform-center-y="-67.33763" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#6f98f1;fill-opacity:0.81176471;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="10.010583"
-       y="634.10516"
-       id="text20799"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan20801"
-         x="10.010583"
-         y="634.10516">These 2 flaps</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#6e97f2;fill-opacity:0.89803922;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="172.59155"
-       y="927.95184"
-       id="text20803"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="172.59155"
-         y="927.95184"
-         id="tspan20811">will travel between </tspan><tspan
-         sodipodi:role="line"
-         x="172.59155"
-         y="977.95184"
-         id="tspan20815">these 3 flaps</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#6e98f2;fill-opacity:0.69803922;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="49.406612"
-       y="386.96213"
-       id="text20821"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan20823"
-         x="49.406612"
-         y="386.96213">Double inside-reverse fold;</tspan></text>
   </g>
 </svg>
