@@ -15,7 +15,7 @@
    id="svg13995"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="Dragon_5_3.svg">
+   sodipodi:docname="Dragon_4_8.svg">
   <defs
      id="defs13997">
     <marker
@@ -552,7 +552,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.90509668"
-     inkscape:cx="365.97938"
+     inkscape:cx="203.01336"
      inkscape:cy="351.67049"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -577,7 +577,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -654,14 +654,14 @@
        inkscape:transform-center-x="-34.573817"
        inkscape:transform-center-y="25.877142" />
     <path
-       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 3;stroke-dashoffset:0;stroke-opacity:1"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:12,6,3,6;stroke-dashoffset:0;stroke-opacity:1"
        d="m 139.93227,821.87881 97.1786,-97.1788"
        id="path7527-7-5-9-4-2"
        inkscape:connector-curvature="0"
        inkscape:transform-center-x="-34.573817"
        inkscape:transform-center-y="-42.838558" />
     <path
-       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 4;stroke-dashoffset:0;stroke-opacity:1"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:12,12;stroke-dashoffset:0;stroke-opacity:1"
        d="m 139.93227,821.87881 97.1786,-40.2529"
        id="path7531-0-1-0-8-4"
        inkscape:connector-curvature="0"
