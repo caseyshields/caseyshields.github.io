@@ -7,46 +7,56 @@
                 background-color: #666;
                 color: #AAA;
                 font-family: sans-serif;
+                margin: 0px;
+                padding: 10px;
             }
             article {
                 background-color: #AAA;
                 color: #666;
                 border-radius: 10px;
-                margin: 10px;
-                padding: 0px;
             }
         </style>
     </head>
     <body>
         <div id="list">
             <h1 v-text="title"></h1>
-            <entry v-for="article in articles" v-bind:entry="article"></entry>
+            <!-- <entry v-for="article in articles" v-bind:entry="article"></entry> -->
+            <entry v-for="article in articles" :name="article.name" :type="article.type" :tags="article.tags"></entry>
         </div>
         <script src="https://unpkg.com/vue"></script>
         <script>
-            //entrytypes = [text, origami, code, blocks, art];
-            //views = [summary, page, full];
-            
+
             Vue.component('entry', {
-                props: ['entry'],//['name', 'type', 'tags', 'content'],
-                template:
-                `<article>
-                <h2>{{entry.name}}</h2>
-                <div v-text="entry.content"></div>
-                </article>`//display tags right justified under title
+                props: {
+                    name: {type: String, required: true},
+                    type: {type: String, required: true, validator: function(value) {
+                        return ( value=='text' || value=='origami' );
+                    }},
+                    tags: {type: Array, required: false},
+                    img: {type: String, required: false}
+                },
+                data: function() {
+                    return {content: 'internal data should be initialized based on type ?'}
+                },
+                template: `<article>
+                <h2>{{name}}</h2>
+                <ul><li v-for='tag in tags'>{{tag}}</li></ul>
+                <div v-text="content"></div>
+                </article>`
+                // todo create content based on 
             });
 
-            new Vue({
+            let instance = new Vue({
                 el: "#list",
                 data: {
-                    title: "Component Examples",
+                    title: "Vue Component Examples",
                     articles: []
                 },
                 created: function() {
                     let test = {
-                        name: 'Test article',
-                        type: 'text',
-                        tags: ['demo'],
+                        name: 'Western Dragon',
+                        type: 'origami',
+                        tags: ['intermediate', 'dragon', 'half-angle'],
                         content: 'do as they do, not as they say'
                     }
                     this.articles.push( test );
