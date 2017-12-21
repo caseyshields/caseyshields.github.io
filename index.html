@@ -1,6 +1,62 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>List</title>
+        <style>
+            body {
+                background-color: #666;
+                color: #AAA;
+                font-family: sans-serif;
+            }
+            article {
+                background-color: #AAA;
+                color: #666;
+                border-radius: 10px;
+                margin: 10px;
+                padding: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="list">
+            <h1 v-text="title"></h1>
+            <entry v-for="article in articles" v-bind:entry="article"></entry>
+        </div>
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            //entrytypes = [text, origami, code, blocks, art];
+            //views = [summary, page, full];
+            
+            Vue.component('entry', {
+                props: ['entry'],//['name', 'type', 'tags', 'content'],
+                template:
+                `<article>
+                <h2>{{entry.name}}</h2>
+                <div v-text="entry.content"></div>
+                </article>`//display tags right justified under title
+            });
+
+            new Vue({
+                el: "#list",
+                data: {
+                    title: "Component Examples",
+                    articles: []
+                },
+                created: function() {
+                    let test = {
+                        name: 'Test article',
+                        type: 'text',
+                        tags: ['demo'],
+                        content: 'do as they do, not as they say'
+                    }
+                    this.articles.push( test );
+                }
+            })
+        </script>
+    </body>
+
+
+    <!-- <head>
         <title>demonstration</title>
         <style>
             .headers {
@@ -14,15 +70,11 @@
     </head>
     <body>
         <div id="test">
-            <!-- <h1 v-once>{{name}}</h1> -->
+            <h1 v-once>{{name}}</h1>
             <h1 v-text="name" v-bind:class="[testStyle, accentStyle]"></h1>
-            
         </div>
-        
-        <!-- <script type="text/javascript" src="https://upkg.com/axios.min.js"></script> -->
+        <script type="text/javascript" src="https://upkg.com/axios.min.js"></script>
         <script type="text/javascript" src="https://unpkg.com/vue"></script>
-        <!-- <script src="https://unpkg.com/vue@2.2.5/dist.vue.min.js"/> -->
-
         <script>
             var test = new Vue({
                 el: '#test', // document.getElementById('test')
@@ -31,9 +83,7 @@
                     testStyle: 'headers',
                     accentStyle: 'accents'
                 }
-                
-            });
-            // lifecycle stages : creation, mounting, updating, destroy
+            }); // lifecycle stages : creation, mounting, updating, destroy
         </script>
-    </body>
+    </body> -->
 </html>
