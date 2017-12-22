@@ -19,8 +19,8 @@
     </head>
     <body>
         <div id="list">
+            <input v-model="query" placeholder="search">
             <h1 v-text="title"></h1>
-            <!-- <entry v-for="article in articles" v-bind:entry="article"></entry> -->
             <entry v-for="article in articles" :name="article.name" :type="article.type" :tags="article.tags"></entry>
         </div>
         <script src="https://unpkg.com/vue"></script>
@@ -33,7 +33,10 @@
                         return ( value=='text' || value=='origami' );
                     }},
                     tags: {type: Array, required: false},
-                    img: {type: String, required: false}
+                    img: {type: String, required: false},
+                    diagrams: {type: Array, required: false, validator: function(value) {
+                        // todo ensure there is an aray of integers representing the number of steps in each stage
+                    }}
                 },
                 data: function() {
                     return {content: 'internal data should be initialized based on type ?'}
@@ -50,6 +53,7 @@
                 el: "#list",
                 data: {
                     title: "Vue Component Examples",
+                    query: '',
                     articles: []
                 },
                 created: function() {
