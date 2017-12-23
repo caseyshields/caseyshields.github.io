@@ -1,0 +1,45 @@
+body {
+    background-color: #666;
+    color: #AAA;
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 10px;
+    display: "flex";
+    flex-direction: "column";
+}
+article {
+    background-color: #AAA;
+    color: #666;
+    border-radius: 10px;
+}
+section {
+    position: relative;
+    background-color: #666;
+    /*border: solid 1px #FFF;*/
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+figure {
+    position: relative;
+    /*border: solid 1px #000;*/
+    display: inline-block;
+}
+figure > img {
+    width: 300px;
+    height: 300px;
+}
+figcaption:first-of-type {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    margin: 0;
+    font-style: bold;
+    font-size: 20px;
+}
+figcaption:last-of-type {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    margin: 0;
+}
