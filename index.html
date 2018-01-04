@@ -8,41 +8,10 @@
         <div id="list">
             <!-- <input v-model="query" placeholder="search"> -->
             <h1 v-text="title"></h1>
-            <entry v-for="article in articles" :name="article.name" :type="article.type" :tags="article.tags"></entry>
+            <!-- <entry v-for="article in articles" :name="article.name" :type="article.type" :tags="article.tags"></entry> -->
+            <diagram :name="'dragon'" :stages="stages"></diagram>
         </div>
         <script src="https://unpkg.com/vue"></script>
         <script src="list.js"></script>
     </body>
-
-
-    <!-- <head>
-        <title>demonstration</title>
-        <style>
-            .headers {
-                font-family: 'Sans-Serif';
-                margin: 0;
-            }
-            .accents {
-                color: #00A;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="test">
-            <h1 v-once>{{name}}</h1>
-            <h1 v-text="name" v-bind:class="[testStyle, accentStyle]"></h1>
-        </div>
-        <script type="text/javascript" src="https://upkg.com/axios.min.js"></script>
-        <script type="text/javascript" src="https://unpkg.com/vue"></script>
-        <script>
-            var test = new Vue({
-                el: '#test', // document.getElementById('test')
-                data: {
-                    name: 'Test!',
-                    testStyle: 'headers',
-                    accentStyle: 'accents'
-                }
-            }); // lifecycle stages : creation, mounting, updating, destroy
-        </script>
-    </body> -->
 </html>
