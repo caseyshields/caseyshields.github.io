@@ -63,8 +63,53 @@ let instance = new Vue({
     this.stages.push( {
       stage: 2, 
       steps: 5,
-      summary: "fold a birdbase with a grafted diagonal strip",
+      summary: "Fold a birdbase with a grafted diagonal strip",
       captions: {1:"first caption"}
+    });
+    this.stages.push({
+      stage:3,
+      steps: 10,
+      summary: "Pre-crease 'Y' bases in graft."
+    });
+    this.stages.push({
+      stage: 4,
+      steps: 11,
+      summary: "Fold the 'Y' bases in the graft"
+    });
+    this.stages.push({
+      stage: 5,
+      steps: 8,
+      summary: "Stretch the center of the base to form body"
+    });
+    this.stages.push({
+      stage: 6,
+      steps: 8,
+      summary: "Fold rear legs and tail"
+    });
+    this.stages.push({
+      stage: 7,
+      steps: 10,
+      summary: "Fold fore legs and neck"
+    });
+    this.stages.push({
+      stage: 8,
+      steps: 7,
+      summary: "Fold the wing arms and shoulders"
+    });
+    this.stages.push({
+      stage: 9,
+      steps: 3,
+      summary: "Shape tail"
+    });// todo, move this to stage 6?
+    this.stages.push({
+      stage: 10,
+      steps: 6,
+      summary: "Fold head and horns"
+    });
+    this.stages.push({
+      stage: 11,
+      steps: 5,
+      summary: "Shape hips and shoulders"
     });
 
     this.articles.push( {
