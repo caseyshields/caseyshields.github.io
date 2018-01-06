@@ -23,8 +23,8 @@ section {
     background-color: #AAA;
     color: #FFF;
     border-radius: 10px;
-    /* padding: 10px; */
-    /* margin: 10px; */
+    padding: 10px;
+    margin: 10px;
 }
 figure {
     position: relative;

@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>List</title>
-        <link rel="stylesheet" type="text/css" href="site.css">
-    </head>
-    <body>
-        <div id="list">
-            <!-- <input v-model="query" placeholder="search"> -->
-            <h1 v-text="title"></h1>
-            <!-- <entry v-for="article in articles" :name="article.name" :type="article.type" :tags="article.tags"></entry> -->
-            <diagram :name="'dragon'" :stages="stages"></diagram>
-            <!-- <diagram :name="'dragon'" :stages="[
-            {stage:1, steps:5, summary:'test'}
-            ]"></diagram>-->
-        </div>
-        <script src="https://unpkg.com/vue"></script>
-        <script src="list.js"></script>
-    </body>
+  <head>
+    <title>List</title>
+    <link rel="stylesheet" type="text/css" href="site.css">        
+  </head>
+  <body>
+    <div id="list">
+      <!-- <input v-model="query" placeholder="search"> -->
+      <h1 v-text="title"></h1>
+      <entry v-for="article in articles"
+        :name="article.name"
+        :summary="article.summary"
+        :tags="article.tags"
+        :img="article.img">
+      </entry>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="list.js"></script>
+    <script type="text/javascript">
+      let main = new Vue({
+        el: "#list",
+        data: {
+          title: "Vue Component Examples",
+          query: '',
+          articles: [],
+        },
+        created: function() {
+          this.articles.push( {
+          name: 'dragon',//'Western Dragon',
+          summary: 'A moderately difficult origami dragon with 4 legs and two wings',
+          tags: ['origami', 'dragon'],
+          img: 'dragon/dragon.svg'
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
