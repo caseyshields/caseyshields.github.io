@@ -35,38 +35,20 @@ Vue.component('diagram', {
     name: {type: String, required: true},
     stages: {type: Array, required: true}//, validator: function() {} }
   },
-  computed: {
-    captions: function() {
-      let descriptions = [];
-      for( var n=0; n<this.stages.length; n++ ) {
-        let stage = this.stages[n];
-        var description = [];
-        if( stage.captions )
-          stage.captions.forEach( function (item, index) {
-            description[ item[0] ] = item[1];
-            //console.log( n+': '+item );
-          } );
-        descriptions.push(description);
-      }
-      console.log( descriptions );
-      return descriptions;
+  data: function() {
+    for( var n=0; n<this.stages.length; n++ ) {
+      let stage = this.stages[n];
+      stage.descriptions = [];
+      if( stage.captions )
+        stage.captions.forEach( function (item, index) {
+          stage.descriptions[ item[0] ] = item[1];
+          //console.log( n+': '+item );
+        } );
+      //console.log( stage.descriptions );
     }
+    return {};
   },
   template:
-  // `<article id="name">
-  //   <section v-for="n in stages.length">
-  //     <figure>
-  //       <img :src="name + '_' + stages[n].stage + '.svg'">
-  //       <!--<figcaption>{{stages[n].stage}}</figcaption>-->
-  //       <figcaption>{{stages[n].summary}}</figcaption>
-  //     </figure>
-  //     <figure v-for="step in stages[n].steps">
-  //       <img :src="name + '_' + stages[n].stage + '_' + step + '.svg'">
-  //       <figcaption>{{stages[n].stage + '.' + step}}</figcaption>
-  //       <!--<figcaption>{{stages[n].description[step]}}</figcaption>-->
-  //     </figure>
-  //   </section>
-  // </article>`
   `<article id="name">
     <section v-for="stage in stages">
       <figure>
@@ -77,22 +59,8 @@ Vue.component('diagram', {
       <figure v-for="step in stage.steps">
         <img :src="name + '_' + stage.stage + '_' + step + '.svg'">
         <figcaption>{{stage.stage + '.' + step}}</figcaption>
-        <!--<figcaption>{{stage.description[step]}}</figcaption>-->
-        <figcaption>{{captions[4][step]}}</figcaption>
+        <figcaption>{{stage.descriptions[step]}}</figcaption>
       </figure>
     </section>
   </article>`
 });
-
-// computed: function() {
-//   for( var n=0; n<this.stages.length; n++ ) {
-//     let stage = stages[n];
-//     stage.content = [];
-//     for( var m=1; m<stage.steps; m++ ) {
-//       if(stage.captions)
-//         stage.captions.forEach( function (item, index) {
-//           stage.content[ item[0] ] = item[1];
-//         } );
-//     }
-//   }
-// }
