@@ -15,17 +15,19 @@ Vue.component('entry', {
 
   //`<embed width="100%" height="500px" :src="name + '/index.html'">`
 
-  `<article>
-    <a href="dragon/index.html"> // target="name+'_frame'">
-      <img :src='img' width="200px" height="200px"/>
-    </a>
-    <span>
+  `<article class="entrysummary">
+    <img class="thumb" :src='img' width="200px" height="200px"/>
+    <a class="title" href="dragon/index.html">
       <h1>{{name}}</h1>
+    </a>
+    <span class="summary">
       {{summary}}
     </span>
-    <span>
-      <ul><li v-for='tag in tags'>{{tag}}</li></ul>
-    </span>
+    <ul class="tags">
+      <li v-for='tag in tags'>
+        {{tag}}
+      </li>
+    </ul>
   </article>`
 });
 
