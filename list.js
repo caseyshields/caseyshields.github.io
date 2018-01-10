@@ -1,5 +1,18 @@
 "using strict";
 
+Vue.component( 'header', {
+
+  props: {
+    name: {type: String, required: true},
+
+  },
+
+  template:
+  `<header>
+    <input v-model="query" placeholder="search">
+  </header>`
+} );
+
 // A component which displays the metadata of a portfolio entry
 Vue.component( 'entry', {
 
