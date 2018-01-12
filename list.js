@@ -33,7 +33,7 @@ Vue.component( 'entry', {
   template:
   `<section class="summary">
     <img :src='img' width="200px" height="200px"/>
-    <a class="title" href="dragon/index.html">
+    <a href="dragon/index.html">
       <h1>{{name}}</h1>
     </a>
     <span>
