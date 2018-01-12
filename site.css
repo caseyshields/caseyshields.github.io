@@ -1,23 +1,51 @@
 body {
-  background-color: #CCC;
-  color: #666;
-  font-family: sans-serif;
-
-  margin: 10px;
-  padding: 10px;
-
+  background-color: #666;
+  color: #CCC;
+  font-family: monospace;
+  margin: 0px;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 20px 1fr 20px;
+}
+header > h1 { grid-area: 2 / 2 / 3 / 3; }
+header > a { grid-area: 3 / 3 / 4 / 4; }
+
+a {
+  color: grey;
+  text-decoration: none;
+}
+h1 {
 
 }
+ul { list-style-type: circle; }
+li { display: inline; }
+
+.summary {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-rows: 100px 100px;
+  justify-content: flex-start; /*space-evenly center*/
+  align-content: flex-start; /*center*/
+  background-color: #FFF;
+}
+.summary > img { grid-area: 1 / 1 / 3 / 2; }
+.summary > a { grid-area: 1 / 2 / 2 / 3; }
+.summary > ul { grid-area: 1 / 3 / 2 / 4; }
+.summary > span { grid-area: 2 / 2 / 3 / 4; }
+
 article {
-  background-color: #CCC;
+  /*background-color: #CCC;
   color: #666;
+  border-left: solid 5px #CCC
   border: solid 1px #666;
-  border-radius: 10px;
+  border-radius: 10px;*/
   padding: 10px;
   margin: 10px;
 }
@@ -33,10 +61,13 @@ section {
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
+
+  background-color: #CCC;
+  color: #666;
+  border-left: solid 5px #CCC
 }
 figure {
   position: relative;
-  /*border: solid 1px #000;*/
   display: inline-block;
 }
 figure > img {
@@ -56,17 +87,4 @@ figcaption:last-of-type {
   bottom: 5%;
   left: 5%;
   margin: 0;
-}
-
-.thumb { grid-area: 1 / 1 / 3 / 2; }
-.title { grid-area: 1 / 2 / 2 / 3; }
-.tags { grid-area: 1 / 3 / 2 / 4; }
-.summary{ grid-area: 2 / 2 / 3 / 4; }
-.entrysummary {
-  display: grid;
-  grid-template-columns: 200px 1fr 1fr;
-  grid-template-rows: 100px 100px;
-  justify-content: flex-start; /*space-evenly center*/
-  align-content: flex-start; /*center*/
-  background-color: #FFF;
 }

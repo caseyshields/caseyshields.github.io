@@ -2,19 +2,26 @@
 <html>
   <head>
     <title>List</title>
-    <link rel="stylesheet" type="text/css" href="site.css">        
+    <link rel="stylesheet" type="text/css" href="site.css">
   </head>
   <body>
     <div id="list">
       <!-- <input v-model="query" placeholder="search"> -->
-      <h1 v-text="title"></h1>
-      <entry v-for="article in articles"
-        :name="article.name"
-        :summary="article.summary"
-        :tags="article.tags"
-        :img="article.img">
+      <home name="Folder's Fold Folder"></home>
+
+      <entry
+        name="Western Dragon"
+        summary="An origami dragon of high intermediate complexity. All fold angles are multiples of 22.5 degrees and relatively few folds are more than 2-ply. This makes it easier to retain accuracy and fold from a small square. The long limbs also make a variety of poses possible."
+        :tags="['origami', 'uniaxial', '12.5', 'dragon']"
+        img="dragon/dragon.svg">
       </entry>
-      <entry name="test" summary="not using vue instance" :tags="['one','two']" img="dragon/dragon.svg"></entry>
+
+      <entry
+        name="Light Tank"
+        summary="A lego mech which transforms into a light wheeled tank with working gun and mortars."
+        :tags="['lego', 'transformer', 'tank']"
+        img="tank/tank.png">
+      </entry>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
@@ -23,17 +30,7 @@
       let main = new Vue({
         el: "#list",
         data: {
-          title: "Vue Component Examples",
           query: '',
-          articles: [],
-        },
-        created: function() {
-          this.articles.push( {
-          name: 'dragon',//'Western Dragon',
-          summary: 'A moderately difficult origami dragon with 4 legs and two wings',
-          tags: ['origami', 'dragon'],
-          img: 'dragon/dragon.svg'
-          });
         }
       });
     </script>

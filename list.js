@@ -1,15 +1,18 @@
 "using strict";
 
-Vue.component( 'header', {
+Vue.component( 'home', {
 
   props: {
     name: {type: String, required: true},
-
   },
 
   template:
   `<header>
-    <input v-model="query" placeholder="search">
+    <h1><a href="" target="main">
+      {{this.name}}
+    </a></h1>
+    <a href="mailto:caseyorigami@gmail.com"> email </a>
+    <!--<input v-model="query" placeholder="search">-->
   </header>`
 } );
 
@@ -24,24 +27,24 @@ Vue.component( 'entry', {
   },
 
   data: function() {
-    return {content: 'internal data should be initialized based on type ?'}
+    return {}
   },
 
   template:
-  `<article class="entrysummary">
-    <img class="thumb" :src='img' width="200px" height="200px"/>
+  `<section class="summary">
+    <img :src='img' width="200px" height="200px"/>
     <a class="title" href="dragon/index.html">
       <h1>{{name}}</h1>
     </a>
-    <span class="summary">
+    <span>
       {{summary}}
     </span>
-    <ul class="tags">
+    <ul>
       <li v-for='tag in tags'>
-        {{tag}}
+        <em>{{tag}}</em>
       </li>
     </ul>
-  </article>`
+  </section>`
   //`<iframe name="name+'_frame'" width="100%" height="500px" :src="name + '/index.html'"></iframe>`
   //`<embed width="100%" height="500px" :src="name + '/index.html'">`
 
