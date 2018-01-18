@@ -9,11 +9,10 @@ Vue.component( 'entry', {
     summary: {type: String, required: false},
     tags: {type: Array, required: false},
     img: {type: String, required: false},
-    expanded: {type: Boolean, required: false}
   },
 
   data: function() {
-    return {};
+    return {expanded: false};
   },
 
   methods: {
@@ -37,7 +36,7 @@ Vue.component( 'entry', {
         <em>{{tag}}</em>
       </li>
     </ul>
-    <embed v-if="expanded" :src="name + '/index.html'" width="100%" height="500px">
+    <embed v-if="expanded" :src="name + '/index.html'" width="100%" height="auto">
   </section>`
   //`<iframe name="name+'_frame'" width="100%" height="500px" :src="name + '/index.html'"></iframe>`
   //`<embed width="100%" height="500px" :src="name + '/index.html'">`
