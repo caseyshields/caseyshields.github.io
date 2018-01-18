@@ -1,40 +1,33 @@
 "using strict";
 
-Vue.component( 'home', {
-
-  props: {
-    name: {type: String, required: true},
-  },
-
-  template:
-  `<header>
-    <h1><a href="" target="main">
-      {{this.name}}
-    </a></h1>
-    <a href="mailto:caseyorigami@gmail.com"> email </a>
-    <!--<input v-model="query" placeholder="search">-->
-  </header>`
-} );
-
 // A component which displays the metadata of a portfolio entry
 Vue.component( 'entry', {
 
   props: {
+    title: {type: String, required: true},
     name: {type: String, required: true},
     summary: {type: String, required: false},
     tags: {type: Array, required: false},
     img: {type: String, required: false},
+    expanded: {type: Boolean, required: false}
   },
 
   data: function() {
-    return {}
+    return {};
+  },
+
+  methods: {
+    toggle: function (event) {
+      this.expanded = !this.expanded;
+      console.log("expanded: "+this.expanded);
+    }
   },
 
   template:
   `<section class="summary">
-    <img :src='img' width="200px" height="200px"/>
-    <a href="dragon/index.html">
-      <h1>{{name}}</h1>
+    <img :src="img" width="200px" height="200px" v-on:click="toggle">
+    <a :href="name+'/index.html'">
+      <h1>{{title}}</h1>
     </a>
     <span>
       {{summary}}
@@ -44,6 +37,7 @@ Vue.component( 'entry', {
         <em>{{tag}}</em>
       </li>
     </ul>
+    <embed v-if="expanded" :src="name + '/index.html'" width="100%" height="500px">
   </section>`
   //`<iframe name="name+'_frame'" width="100%" height="500px" :src="name + '/index.html'"></iframe>`
   //`<embed width="100%" height="500px" :src="name + '/index.html'">`

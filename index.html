@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>List</title>
+    <title>Origametry</title>
     <link rel="stylesheet" type="text/css" href="site.css">
   </head>
-  <body>
-    <div id="list">
-      <!-- <input v-model="query" placeholder="search"> -->
-      <home name="Folder's Fold Folder"></home>
+  <body> <div id="list">
+
+    <header>
+      <h1>Origametry</h1>
+      <a href="mailto:caseyorigami@gmail.com"> caseyorigami </a>
+      <!--<input v-model="query" placeholder="search">-->
+    </header>
 
       <entry
-        name="Western Dragon"
+        title="Western Dragon"
+        name="dragon"
         summary="An origami dragon of high intermediate complexity. All fold angles are multiples of 22.5 degrees and relatively few folds are more than 2-ply. This makes it easier to retain accuracy and fold from a small square. The long limbs also make a variety of poses possible."
         :tags="['origami', 'uniaxial', '12.5', 'dragon']"
         img="dragon/dragon.svg">
       </entry>
 
       <entry
-        name="Light Tank"
-        summary="A lego mech which transforms into a light wheeled tank with working gun and mortars."
+        title="Light Tank Mechwarrior"
+        name="tank"
+        summary="A lego mech which transforms into a light wheeled tank based on the Japanese MCV Type 16. Working gun and mortars are usable in both robot and vehicle mode."
         :tags="['lego', 'transformer', 'tank']"
         img="tank/tank.png">
       </entry>
-    </div>
 
-    <script src="https://unpkg.com/vue"></script>
-    <script src="list.js"></script>
-    <script type="text/javascript">
-      let main = new Vue({
-        el: "#list",
-        data: {
-          query: '',
-        }
-      });
-    </script>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="list.js"></script>
+  <script type="text/javascript">
+    let main = new Vue({
+      el: "#list",
+      data: {
+        query: '',
+      }
+    });
+  </script>
   </body>
 </html>
