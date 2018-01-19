@@ -12,13 +12,41 @@ Vue.component( 'entry', {
   },
 
   data: function() {
-    return {expanded: false};
+    return {
+      expanded: false,
+      message: "",
+      height: 0
+    };
   },
 
   methods: {
+    // toggle whether the content is visible...
     toggle: function (event) {
+
       this.expanded = !this.expanded;
-      console.log("expanded: "+this.expanded);
+      if (this.expanded)
+        this.message = "LOADING";
+      else this.message = "";
+
+      // can't really alter the reactive template's DOM!;
+      // let dom = this.$el;
+      // let p = dom.getElementsByTagName("p");
+      // p.innerHTHL = "LOADING..."
+
+      //let h = document.createElement("h1");
+      //dom.append(h);
+    },
+    // when the iframe loads, resize the iframe to hold all of the content
+    loaded: function (event) {
+      let dom = this.$el;
+      let iframe = dom.getElementsByTagName("iframe");
+      this.height = iframe[0].contentWindow.document.body.scrollHeight
+      this.message = "";
+      // not sure if we can mess with template tag attributes
+      //iframe[0].setAttribute("height", height+"px");
+
+      //Vue.nextTick( function() {this.message="";})
+      //this.message = ""; // this doe not work reactively when called from a load event handler...
     }
   },
 
@@ -26,7 +54,7 @@ Vue.component( 'entry', {
   `<section class="summary">
     <img :src="img" width="200px" height="200px" v-on:click="toggle">
     <a :href="name+'/index.html'">
-      <h1>{{title}}</h1>
+      <h1>{{message}} {{title}}</h1>
     </a>
     <span>
       {{summary}}
@@ -36,11 +64,16 @@ Vue.component( 'entry', {
         <em>{{tag}}</em>
       </li>
     </ul>
-    <embed v-if="expanded" :src="name + '/index.html'" width="100%" height="auto">
+    <iframe v-if="expanded"
+      :src="name + '/index.html'"
+      v-on:load="loaded"
+      :height="height+'px'"
+      width="100%" frameborder="0">
+    </iframe>
   </section>`
-  //`<iframe name="name+'_frame'" width="100%" height="500px" :src="name + '/index.html'"></iframe>`
-  //`<embed width="100%" height="500px" :src="name + '/index.html'">`
-
+  //sandbox="allow-scripts"
+  //<!--<object v-if="expanded" :data="name + '/index.html'" type="text/html" width="100%" height="100%" />--> // type="svg+xml"
+  //<!--<embed v-if="expanded" :src="name + '/index.html'" width="100%" height="auto" />-->
 });
 
 // A Vue component for displaying a sequence of diagrams
