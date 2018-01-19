@@ -18,7 +18,9 @@ Vue.component( 'entry', {
       height: 0
     };
   },
-
+  created: function() {
+    window.addEventListener('resize', this.resize);
+  },
   methods: {
     // toggle whether the content is visible...
     toggle: function (event) {
@@ -27,26 +29,15 @@ Vue.component( 'entry', {
       if (this.expanded)
         this.message = "LOADING";
       else this.message = "";
-
-      // can't really alter the reactive template's DOM!;
-      // let dom = this.$el;
-      // let p = dom.getElementsByTagName("p");
-      // p.innerHTHL = "LOADING..."
-
-      //let h = document.createElement("h1");
-      //dom.append(h);
     },
-    // when the iframe loads, resize the iframe to hold all of the content
-    loaded: function (event) {
+    // resize the iframe to hold all of the loaded content
+    resize: function (event) {
+      console.log("resized: "+this.height);
+      if (!this.expanded) return;
       let dom = this.$el;
       let iframe = dom.getElementsByTagName("iframe");
       this.height = iframe[0].contentWindow.document.body.scrollHeight
       this.message = "";
-      // not sure if we can mess with template tag attributes
-      //iframe[0].setAttribute("height", height+"px");
-
-      //Vue.nextTick( function() {this.message="";})
-      //this.message = ""; // this doe not work reactively when called from a load event handler...
     }
   },
 
@@ -66,7 +57,7 @@ Vue.component( 'entry', {
     </ul>
     <iframe v-if="expanded"
       :src="name + '/index.html'"
-      v-on:load="loaded"
+      v-on:load="resize"
       :height="height+'px'"
       width="100%" frameborder="0">
     </iframe>
