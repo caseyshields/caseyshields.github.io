@@ -18,9 +18,11 @@ Vue.component( 'entry', {
       height: 0
     };
   },
+
   created: function() {
     window.addEventListener('resize', this.resize);
   },
+
   methods: {
     // toggle whether the content is visible...
     toggle: function (event) {
@@ -30,6 +32,7 @@ Vue.component( 'entry', {
         this.message = "LOADING";
       else this.message = "";
     },
+
     // resize the iframe to hold all of the loaded content
     resize: function (event) {
       console.log("resized: "+this.height);
@@ -42,19 +45,19 @@ Vue.component( 'entry', {
   },
 
   template:
-  `<section class="summary">
-    <img :src="img" width="200px" height="200px" v-on:click="toggle">
-    <a :href="name+'/index.html'">
-      <h1>{{message}} {{title}}</h1>
-    </a>
-    <span>
-      {{summary}}
-    </span>
-    <ul>
-      <li v-for='tag in tags'>
-        <em>{{tag}}</em>
-      </li>
-    </ul>
+  `<section>
+    <header :id="name">
+      <img :src="img" width="200px" height="200px" v-on:click="toggle">
+      <a :href="name+'/index.html'">
+        <h1> {{message}} {{title}} </h1>
+      </a>
+      <span> {{summary}} </span>
+      <ul>
+        <li v-for='tag in tags'>
+          <em> {{tag}} </em>
+        </li>
+      </ul>
+    </header>
     <iframe v-if="expanded"
       :src="name + '/index.html'"
       v-on:load="resize"
@@ -62,6 +65,7 @@ Vue.component( 'entry', {
       width="100%" frameborder="0">
     </iframe>
   </section>`
+
   //sandbox="allow-scripts"
   //<!--<object v-if="expanded" :data="name + '/index.html'" type="text/html" width="100%" height="100%" />--> // type="svg+xml"
   //<!--<embed v-if="expanded" :src="name + '/index.html'" width="100%" height="auto" />-->
