@@ -45,7 +45,7 @@ Vue.component( 'entry', {
   },
 
   template:
-  `<section>
+  `<article>
     <header :id="name">
       <img :src="img" width="200px" height="200px" v-on:click="toggle">
       <a :href="name+'/index.html'">
@@ -62,9 +62,9 @@ Vue.component( 'entry', {
       :src="name + '/index.html'"
       v-on:load="resize"
       :height="height+'px'"
-      width="100%" frameborder="0">
+      scrolling="no" width="100%" frameborder="0">
     </iframe>
-  </section>`
+  </article>`
 
   //sandbox="allow-scripts"
   //<!--<object v-if="expanded" :data="name + '/index.html'" type="text/html" width="100%" height="100%" />--> // type="svg+xml"
@@ -94,7 +94,7 @@ Vue.component( 'diagram', {
   },
 
   template:
-  `<article id="name">
+  `<div id="name">
     <section v-for="stage in stages">
       <figure>
         <img :src="name + '_' + stage.stage + '.svg'">
@@ -107,5 +107,5 @@ Vue.component( 'diagram', {
         <figcaption>{{stage.descriptions[step]}}</figcaption>
       </figure>
     </section>
-  </article>`
+  </div>`
 });

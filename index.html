@@ -3,12 +3,12 @@
   <head>
     <title>Origametry</title>
     <link rel="stylesheet" type="text/css" href="site.css">
-    <h1>Origametry</h1>
-    <a href="mailto:caseyorigami@gmail.com"> caseyorigami </a>
-    <!--<input v-model="query" placeholder="search">-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
   </head>
   <body>
-    <div id="list">
+    <main id="list">
+      <a href="mailto:caseyorigami@gmail.com"> <h3>caseyorigami</h3> </a>
+      <!--<input v-model="query" placeholder="search">-->
       <entry
         title="Western Dragon"
         name="dragon"
@@ -17,18 +17,18 @@
         img="dragon/dragon.svg">
       </entry>
       <entry
-        title="Light Tank Mechwarrior"
+        title="Light Tank"
         name="tank"
-        summary="A lego mech which transforms into a light wheeled tank based on the Japanese MCV Type 16. Working gun and mortars are usable in both robot and vehicle mode."
+        summary="A lego mech which transforms into a light wheeled tank based on the Japanese MCV Type 16. Working gun and mortars are usable in both robot and vehicle mode. Originally released on the old brick link MOC pages."
         :tags="['lego', 'transformer', 'tank']"
         img="tank/tank.png">
       </entry>
-    </div>
+    </main>
     <script src="https://unpkg.com/vue"></script>
     <script src="list.js"></script>
     <script type="text/javascript">
       let main = new Vue({
-        el: "#list",
+        el: "main",
         data: {
           query: '',
         }
