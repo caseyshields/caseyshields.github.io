@@ -11,10 +11,10 @@ html, body {
 a , a:hover {
   color: #CCC;
   text-decoration: none;
-  /* text-shadow: 4px 4px 4px #666; */
+  text-shadow: 4px 4px 4px #000;
 }
 a:hover {
-  /* text-shadow: 4px 4px 4px #AAA; */
+  text-shadow: 4px 4px 4px #AAA;
 }
 
 main {
