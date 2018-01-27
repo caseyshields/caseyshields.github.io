@@ -4,6 +4,23 @@
     <title>Half angle</title>
     <link rel="stylesheet" type="text/css" href="site.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+    <style>
+      circle {
+        fill: none;
+        stroke: #000;
+        stroke-width: 5px;
+      }
+      rect {
+        fill: none;
+        stroke: #000;
+        stroke-width: 1px;
+      }
+      path {
+        fill: none;
+        stroke: #CCC;
+        stroke-width: 1px;
+      }
+    </style>
   </head>
   <body>
     <svg width="512" height="512">  </svg>
@@ -27,9 +44,9 @@
       draw(svg, rect, 8);
 
       function draw(svg, rectangle, angles) {
-        let x1 = parseInt(rectangle.getAttribute("x"));
-        let x2 = x1 + parseInt(rectangle.getAttribute("width"));
-        let y = 0;//parseInt(rectangle.getAttribute("y")) + parseInt(rectangle.getAttribute("height"));
+        let x1 = parseInt( rectangle.getAttribute("x") );
+        let x2 = x1 + parseInt( rectangle.getAttribute("width") );
+        let y = 0;//parseInt( rectangle.getAttribute("y") ) + parseInt( rectangle.getAttribute("height") );
         let da = Math.PI/angles;
 
         for(let n=0; n<angles; n++) {
@@ -37,14 +54,10 @@
           let dx = length * Math.cos(da*n);
           let dy = length * Math.sin(da*n);
           let d = "M"+x1+","+y+" l"+dx+", "+dy;
-          console.log(d);
           path.setAttribute("d", d);
           svg.appendChild(path);
         }
-
       }
-
-      console.log(svg);
     </script>
   </body>
 </html>
