@@ -3,60 +3,60 @@
   <head>
     <title>Half angle</title>
     <link rel="stylesheet" type="text/css" href="site.css">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+    <link href="../site.css" rel="stylesheet" />
     <style>
       circle {
         fill: none;
-        stroke: #000;
-        stroke-width: 5px;
-      }
-      rect {
-        fill: none;
-        stroke: #000;
-        stroke-width: 1px;
+        stroke: #00F;
+        stroke-width: 4px;
       }
       path {
         fill: none;
-        stroke: #CCC;
-        stroke-width: 1px;
+        stroke: #000;
+        stroke-width: 2px;
       }
     </style>
   </head>
   <body>
-    <svg width="512" height="512">  </svg>
+    <section>
+      <svg width="1024" height="1024">  </svg>
+    </section>
     <script>
       let svg = document.getElementsByTagName("svg")[0];
-      let length = svg.getAttribute("width");
+      let width = parseInt(svg.getAttribute("width"));
+      // let g = document.createElementNS("https://www.w3.org/2000/svg", "g");
+      // svg.appendChild(g);
+      draw(svg, width, -width, 0, 8, 16);
 
-      let rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-      rect.setAttribute("x", 0);
-      rect.setAttribute("y", 0);
-      rect.setAttribute("width", length);
-      rect.setAttribute("height", length);
-      svg.appendChild(rect);
+      function draw(svg, x1, x2, y, depth, angles) {
+        if(depth==0)
+          return;
 
-      // let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-      // circle.setAttribute("cx", 256);
-      // circle.setAttribute("cy", 256);
-      // circle.setAttribute("r", 256);
-      // svg.appendChild( circle );
+        var length = (x2-x1);
+        var mid = length / 2;
+        var da = Math.PI / angles;
 
-      draw(svg, rect, 8);
+        // draw a circle around the starting point
+        let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        circle.setAttribute("cx", x1);
+        circle.setAttribute("cy", y);
+        circle.setAttribute("r", Math.abs(length));
+        svg.appendChild( circle );
 
-      function draw(svg, rectangle, angles) {
-        let x1 = parseInt( rectangle.getAttribute("x") );
-        let x2 = x1 + parseInt( rectangle.getAttribute("width") );
-        let y = 0;//parseInt( rectangle.getAttribute("y") ) + parseInt( rectangle.getAttribute("height") );
-        let da = Math.PI/angles;
-
-        for(let n=0; n<angles; n++) {
-          let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-          let dx = length * Math.cos(da*n);
-          let dy = length * Math.sin(da*n);
-          let d = "M"+x1+","+y+" l"+dx+", "+dy;
+        // divide the circle by some integer and draw that many radii, then turn and right angle and return the path to x2
+        for(let n=0; n<=angles; n++) {
+          var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          var dx = 2*mid * Math.cos(da*n);
+          var dy = 2*Math.abs(mid) * Math.sin(da*n);
+          var d = "M"+x1+","+y+" l"+dx+", "+dy+" L"+x2+","+y;
+          console.log(d);
           path.setAttribute("d", d);
+          // path.setAttribute("style", 'stroke-width: '+width);
           svg.appendChild(path);
         }
+
+        // recurse going the opposite direction at half the width
+        draw(svg, x2-mid, x1, y, --depth, angles);
       }
     </script>
   </body>
