@@ -24,9 +24,18 @@
     <script>
       let svg = document.getElementsByTagName("svg")[0];
       let width = parseInt(svg.getAttribute("width"));
+
       // let g = document.createElementNS("https://www.w3.org/2000/svg", "g");
-      // svg.appendChild(g);
+      // svg.appendChild(g); // todo might want to nest recursion in groups for better styling control...
+
       draw(svg, width, -width, 0, 8, 16);
+
+      // for title image...
+      // svg.setAttribute("stroke", "#000");
+      // svg.setAttribute("stroke-width", "2px");
+      // svg.setAttribute("fill", "none");
+      // draw(svg, 512, width, 0, 1, 16);
+      // draw(svg, 512, 0, 0, 1, 16);
 
       function draw(svg, x1, x2, y, depth, angles) {
         if(depth==0)
@@ -41,6 +50,7 @@
         circle.setAttribute("cx", x1);
         circle.setAttribute("cy", y);
         circle.setAttribute("r", Math.abs(length));
+        // circle.setAttribute("fill", "none");
         svg.appendChild( circle );
 
         // divide the circle by some integer and draw that many radii, then turn and right angle and return the path to x2
@@ -51,7 +61,7 @@
           var d = "M"+x1+","+y+" l"+dx+", "+dy+" L"+x2+","+y;
           console.log(d);
           path.setAttribute("d", d);
-          // path.setAttribute("style", 'stroke-width: '+width);
+          // path.setAttribute("style", 'fill:none; stroke-width:1;');
           svg.appendChild(path);
         }
 
