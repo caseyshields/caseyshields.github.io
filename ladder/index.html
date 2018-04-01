@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Ladder Diagram Test</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../site.css" />
+        <style> /*http://colorbrewer2.org/#type=sequential&scheme=YlGnBu&n=6*/
+            #legs rect { stroke: none; }
+            #legs text {
+                fill: #888;
+                stroke: none;
+                font-family: sans-serif;
+                font-weight: bold;
+            }
+            .technician { fill: #ffffcc; }
+            .mechanic { fill: #c7e9b4; }
+            .engineer { fill: #7fcdbb; }
+            .supervisor { fill: #41b6c4; }
+            .representative { fill: #2c7fb8; }
+            .customer { fill: #253494; }
+            
+            #rungs path { stroke: none; }
+            .request { fill: goldenrod; }
+            .accept { fill: green; }
+            .reject { fill: red; }
+            
+            .readout {
+                font-size: 15px;
+                font-family: sans-serif;
+                background-color: white;
+                border-radius: 15px;
+                padding: 15px;
+                overflow: hidden;
+                max-width: 500px;
+                max-height: 500px;
+            }
+            /* TODO I should use two different mono hues for both source and protocols...*/
+        </style>
+    </head>
+    <body>
+        <section>
+            <span>A ladder diagram using the <a target="_base" href="https://d3js.org/">D3</a> component idiom. Plots messages between different sources. Sources must have 'id' and 'class' attributes. Messages must have 'time', 'class', 'source', and 'target' attributes. Class attributes are added to SVG elements so they can be styled with CSS. Here I use a color scheme from <a target="_base" href="http://colorbrewer2.org/#type=sequential&scheme=YlGnBu&n=6">Cynthia Brewer</a>. </span>
+            <span>The dataset is meant to simulate an undisciplined chain of command. Hovering will pull up a tooltip with the data point's JSON. I still need to add source reordering and zoom controls. I was also toying with the idea of adding small plots or horizon charts on each sourceline- though that might make it too busy to be useful...</span>
+        </section>
+        <section>
+            <svg width="800" height="320"></svg>
+        </section>
+        
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="ladder.js"></script>
+        <script src="readout.js"></script>
+        <script type="text/javascript">
+
+            sources = [
+                { id:'Alice', class:"technician" },
+                { id:'Bob', class:"mechanic" },
+                { id:'Caleb', class:"engineer" },
+                { id:'Donna', class:"supervisor" },
+                { id:'Eric', class:"representative" },
+                { id:'Fanny', class:"customer" }
+            ];
+            events = [
+                {time:0, class: 'request', source: 'Alice', target: 'Bob', origin:'Alice'}
+                // {time:0, class: 'request', source:'Fanny', target: 'Donna'},
+                // {time:1, class: 'request', source:'Fanny', target: 'Bob'},
+                // {time:2, class: 'accept', source:'Donna', target: 'Fanny'},
+                // {time:3, class: 'reject', source:'Bob', target: 'Fanny'}
+            ];
+
+            let getSuperior = function ( name ) {
+                let n = sources.findIndex( function(d) {return d.id==name;} );
+                return (n!=-1 && n!=sources.length-1) ? sources[n+1] : null;
+            };
+
+            let getSubordinate = function( name ) {
+                let n = sources.findIndex( function(d) {return d.id==name;} );
+                return (n!=-1 && n!=0) ? sources[n-1] : null;
+            }
+
+            let svg = d3.selectAll('svg');
+            let readout = createReadout();
+            let ladder = createLadder( svg, 'test', 0, 0, 800, 300, readout)
+                .sources( sources )
+                .events ( events )
+                .interval( 200 );
+            ladder();
+
+            // A little generator that simulates requests in a chain of command
+            d3.interval( function(elapsed) {
+                let last = events[events.length-1];
+                let event = null;
+                
+                let t = last.time + 1 + Math.random()*8;//elapsed //d3.now();
+
+                // if a request hasn't been answered
+                if (last.class=='request') {
+                    
+                    // half the time the superior knows the answer, Fanny always knows the answer
+                    if (Math.random()<0.5 || last.target=='Fanny') {
+                        // 3/4ths the time the answer is permissive
+                        if(Math.random()<0.75)
+                            event = { time:t, class:'accept', source:last.target, target:last.source, origin:last.origin };
+                        else
+                            event = { time:t, class:'reject', source:last.target, target:last.source, origin:last.origin };
+                    }
+                    // otherwise they pass it up the chain
+                    else {
+                        superior = getSuperior( last.target );
+                        event = { time:t, class:'request', source:last.target, target:superior.id, origin:last.origin };
+                    }
+
+                // pass answers back down the chain of command
+                } else {
+                    // if the originator hasn't recieved the answer, pass it to the subordinate
+                    if (last.target!=last.origin) {
+                        let subordinate = getSubordinate( last.target );
+                        event = { time:t, class:last.class, source:last.target, target:subordinate.id, origin:last.origin};
+                    }
+                    // otherwise randomly generate a new request
+                    else {
+                        let r1 = Math.floor(Math.random()*(sources.length-1));
+                        let origin = sources[ r1 ];
+                        let r2 = r1 +1 + Math.floor(Math.random()*(sources.length-r1-1));
+                        let superior = sources[ r2 ];
+                        //let superior = getSuperior( origin.id );
+                        event = { time:t, class:'request', source: origin.id, target:superior.id, origin:origin.id};
+                    }
+                }
+                
+                // add the message and update the diagram...
+                ladder.add( event );
+                ladder();
+                
+            }, 3000);
+            
+        </script>
+    </body>
+</html>
