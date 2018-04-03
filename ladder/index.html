@@ -43,7 +43,8 @@
             <span>The dataset is meant to simulate an undisciplined chain of command. Hovering will pull up a tooltip with the data point's JSON. I still need to add source reordering and zoom controls. I was also toying with the idea of adding small plots or horizon charts on each sourceline- though that might make it too busy to be useful...</span>
         </section>
         <section>
-            <svg width="800" height="320"></svg>
+            <svg id="chain" width="800" height="320"></svg>
+            <svg id="sip" width="700" height="320"></svg>
         </section>
         
         <script src="https://d3js.org/d3.v4.js"></script>
@@ -84,6 +85,34 @@
                 .events ( events )
                 .interval( 200 );
             ladder();
+
+            let sip = createLadder( svg, 'sip', 0, 0, 600, 600, readout )
+                .sources( [
+                    {id:'Alice', class:'User'},
+                    {id:'Server', class:'Agent'},
+                    {id:'Proxy', class:'Agent'},
+                    {id:'Boris', class:'User'}
+                ] )
+                .events( [
+                    {time:040, source:'Alice', target:'Server', class:'msg Invite'},
+                    {time:080, source:'Server', target:'Alice', class:'reply Moved(302)'},
+                    {time:120, source:'Alice', target:'Server', class:'msg Ack'},
+                    {time:160, source:'Alice', target:'Proxy', class:'msg Invite'},
+                    {time:200, source:'Proxy', target:'Boris', class:'msg Invite'},
+                    {time:240, source:'Proxy', target:'Alice', class:'reply Trying'},
+                    {time:280, source:'Boris', target:'Proxy', class:'reply Ringing'},
+                    {time:320, source:'Proxy', target:'Alice', class:'reply Ringing'},
+                    {time:360, source:'Boris', target:'Proxy', class:'reply OK'},
+                    {time:400, source:'Proxy', target:'Alice', class:'reply OK'},
+                    {time:440, source:'Alice', target:'Proxy', class:'msg Ack'},
+                    {time:480, source:'Proxy', target:'Boris', class:'msg Ack'},
+                    {time:520, source:'Alice', target:'Boris', class:'session Media(RTP)'},
+                    {time:560, source:'Boris', target:'Proxy', class:'msg Bye'},
+                    {time:600, source:'Proxy', target:'Alice', class:'msg Bye'},
+                    {time:640, source:'Alice', target:'Proxy', class:'reply OK(200)'},
+                    {time:680, source:'Proxy', target:'Boris', class:'reply OK(200)'},
+                ] )
+                .interval( 500 );
 
             // A little generator that simulates requests in a chain of command
             d3.interval( function(elapsed) {
