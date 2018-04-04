@@ -7,8 +7,29 @@ fs.readFile( 'public/FK6/ReadMe',
 
         let lines = data.split('\n');
         
-        for (let line of lines )
-            console.log(line);
+        // find fk6_1 metadata
+        let HEADER = 'Byte-by-byte Description of file: fk6_1.dat';
+        let n = 0; //line = '';
+        while (n < lines.length) {
+            if (lines[n] == HEADER)
+                break;
+            else n++;
+        }
+
+        // read column names
+        n+=2;
+        let names = lines[n].split(/[\s-]+/);
+        console.log(names);
+
+        // read fields
+        n+=2;
+        const SEPARATOR = '--------------------------------------------------------------------------------';
+        while (lines[n]!==SEPARATOR) {
+            let columns = lines[n].split(/[-\s]+/);
+            console.log( columns );
+            n++;
+        }// TODO can't just split need to consider number of columns and their position...
+        
     }
 );
 
