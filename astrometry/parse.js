@@ -21,13 +21,43 @@ fs.readFile( 'public/FK6/ReadMe',
         let names = lines[n].split(/[\s-]+/);
         console.log(names);
 
-        // read fields
+        // read every line until the separator
         n+=2;
+        const EXPLANATION_COLUMN = 35;
         const SEPARATOR = '--------------------------------------------------------------------------------';
-        while (lines[n]!==SEPARATOR) {
-            let columns = lines[n].split(/[-\s]+/);
+        while (n<82&&lines[n]!==SEPARATOR) {
+            let line = lines[n];
+
+            if (SEPARATOR==line)
+                break;
+
+            let columns = lines[n].split( /[-\s]+/, 5);
+            columns.push( line.slice(EXPLANATION_COLUMN) );
             console.log( columns );
             n++;
+            // // split the line into the same number of column
+            // let values = [];
+            // let start = 0;
+            // while (true) {
+            //     while (start<line.length)
+            //         if (line[start]==' ')
+            //             start++;
+            //         else break;
+
+            //     if (values.length==names.length) {
+            //         values.push( line.slice(start) );
+            //         break;
+            //     } else {
+            //         let end = start+1;
+            //         while (end<line.length) {
+            //             if(line[end]==' ' || line[end]=='-') {
+            //                 values.push(line.slice(start, end));
+            //                 break;
+            //             }
+            //         }
+            //     }
+            // }
+            
         }// TODO can't just split need to consider number of columns and their position...
         
     }
