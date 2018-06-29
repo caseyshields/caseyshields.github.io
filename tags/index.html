@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tag Widget</title>
+        <link href="../site.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="overlay">
+            <h1> Tag Widget </h1>
+            <h4> In preparation of more content, I want to have a more efficient tag query utility for sorting more entries.</h4>
+        </div>
+        <section>
+            <svg width="1024" height="768" style="background-color:#888"></svg>
+        </section>
+        <script src="https://d3js.org/d3.v4.js"></script>
+<script>
+
+// Prepare selectors
+let svg = d3.select('svg');
+let width = +svg.attr('width');
+let height = svg.attr('height');
+let nodes = svg.selectAll('.node');
+let edges = svg.selectAll('.edge');
+
+// sample dataset
+let articles = [
+    { title:"Dragon", tags:["origami","instructions"] },
+    { title:"MCV03", tags:["lego"]}
+];
+//TODO load dataset from a precompiled json!
+
+// find all unique tags, and make D3 nodes for each
+let tags = [];
+for( article in articles ) {
+    for( tag in article.tags ) {
+
+    }
+}
+
+// compile all links; tag pairs which were associated with the same article
+let links = [];
+
+// Prepare simulation
+let linking = d3.forceLink()
+    .links( links )
+    .distance( .75 );
+let charging = d3.forceManyBody();
+let centering = d3.forceCenter()
+    .x( width/2 )
+    .y( height/2 );
+let simulation = d3.forceSimulation( tags )
+    .force( 'linking', linking )
+    .force( 'charging', charging )
+    .force( 'centering', centering )
+    .alphaTarget( 1 )
+    .on( 'tick', tock );
+
+// callback for simulation's main loop
+function tock() {
+    
+}
+</script>
+    </body>
+</html>
