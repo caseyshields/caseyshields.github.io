@@ -33,7 +33,7 @@ article {
   position: sticky;
   top: 0px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   background-color: #888;
   border-bottom: solid 10px #CCC;
