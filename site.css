@@ -29,6 +29,17 @@ article {
   overflow: hidden;
 }
 
+.banner {
+  position: sticky;
+  top: 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  background-color: #888;
+  border-bottom: solid 10px #CCC;
+  margin-bottom: 10px;
+}
+
 header {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr;
