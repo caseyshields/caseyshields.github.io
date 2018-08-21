@@ -9,6 +9,7 @@ Vue.component( 'entry', {
     summary: {type: String, required: false},
     tags: {type: Array, required: false},
     img: {type: String, required: false},
+    link: {type: String, required: true}
   },
 
   data: function() {
@@ -20,7 +21,7 @@ Vue.component( 'entry', {
   },
 
   created: function() {
-    window.addEventListener('resize', this.resize);
+    // window.addEventListener('resize', this.resize);
   },
 
   methods: {
@@ -39,7 +40,8 @@ Vue.component( 'entry', {
       if (!this.expanded) return;
       let dom = this.$el;
       let iframe = dom.getElementsByTagName("iframe");
-      this.height = iframe[0].contentWindow.document.body.scrollHeight
+      this.height = 500;
+      //this.height = iframe[0].contentWindow.document.body.scrollHeight // not legal on a different page...
       this.message = "";
     }
   },
@@ -47,8 +49,8 @@ Vue.component( 'entry', {
   template:
   `<article>
     <header :id="name">
-      <img :src="img" width="200px" height="200px" v-on:click="toggle">
-      <a :href="name+'/index.html'">
+      <img :src="img" width="200px" height="200px" >
+      <a :href="link" target="popup">
         <h1> {{message}} {{title}} </h1>
       </a>
       <span> {{summary}} </span>
@@ -58,18 +60,52 @@ Vue.component( 'entry', {
         </li>
       </ul>
     </header>
-    <iframe v-if="expanded"
-      :src="name + '/index.html'"
-      v-on:load="resize"
-      :height="height+'px'"
-      scrolling="no" width="100%" frameborder="0">
-    </iframe>
   </article>`
+  //<img :src="img" width="200px" height="200px" v-on:click="toggle">
+    // <iframe v-if="expanded"
+    //   :src= "link"
+    //   v-on:load="resize"
+    //   :height="height+'px'"
+    //   scrolling="yes" width="100%" frameborder="0">
+    // </iframe>
 
   //sandbox="allow-scripts"
   //<!--<object v-if="expanded" :data="name + '/index.html'" type="text/html" width="100%" height="100%" />--> // type="svg+xml"
   //<!--<embed v-if="expanded" :src="name + '/index.html'" width="100%" height="auto" />-->
 });
+      // <img
+      //   :src="img"
+      //   width="200px"
+      //   height="200px"
+      //   v-on:click="$emit('link', )">
+// Vue.component( 'lister', {
+  
+//   data: function () {
+//     return {
+//       visible: false,
+//       url: ""
+//     };
+//   },
+
+//   methods: {
+//     show = function(link) {
+//       url = link;
+//       visible = true;
+//     },
+
+//     hide = function() {
+//       visible = true;
+//     }
+//   },
+
+//   template:
+//     `<slot></slot>
+//     <iframe
+//       vshow="visible"
+//       name="lister",
+//       :src="link" >
+//     </iframe>`
+// });
 
 // A Vue component for displaying a sequence of diagrams
 Vue.component( 'diagram', {
@@ -109,3 +145,19 @@ Vue.component( 'diagram', {
     </section>
   </div>`
 });
+
+    //TODO make the whole app a component...
+// `<main>
+//     <nav>putlinkshere</nav>
+//     <article
+//       v-for="item in articles"
+//       :title"item.title"
+//       :summary="item.summary"
+//       :tags="item.tags"
+//       :link="item.link">
+//     </article>
+//     <iframe
+//       :name="id",
+//       :src="link" >
+//     </iframe>
+// </main>`
