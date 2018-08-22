@@ -3,8 +3,7 @@
 Vue.component( 'portfolio', {
 
   props: {
-    name: {type:String, required:true},
-    articles: {type: Array, required:true}
+    entries: {type: Array, required:true}
   },
 
   data: function() {
@@ -26,23 +25,26 @@ Vue.component( 'portfolio', {
   },
 
   template:
-  `<main>
-      <nav>
-        putlinkshere
-      </nav>
-      <article
-        v-for="item in articles"
-        :title"item.title"
-        :link="item.link"
-        :summary="item.summary"
-        :tags="item.tags">
-      </article>
-      <iframe
-        vshow="visible"
-        name="display",
-        :src="url" >
+  `<div>
+
+      <entry
+        v-for="item in entries"
+        v-bind:title="item.title"
+        v-bind:summary="item.summary"
+        v-bind:tags="item.tags"
+        v-bind:link="item.link"
+        v-bind:img="item.img">
+      </entry>
+      
+      <iframe v-if="visible"
+        name="display"
+        :src="url"
+        height="70%" width="70%"
+        scrolling="yes" frameborder="5">
       </iframe>
-  </main>`
+
+      <slot></slot>
+  </div>`
 });
 
 // A component which displays the metadata of a portfolio entry
@@ -50,11 +52,10 @@ Vue.component( 'entry', {
 
   props: {
     title: {type: String, required: true},
-    name: {type: String, required: true},
     summary: {type: String, required: false},
     tags: {type: Array, required: false},
-    img: {type: String, required: false},
-    link: {type: String, required: true}
+    link: {type: String, required: true},
+    img: {type: String, required: false}
   },
 
   data: function() {

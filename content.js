@@ -1,4 +1,5 @@
-let content = [
+getContent = function () {
+  return [
     {
       title:"Western Dragon",
       name:"dragon",
@@ -63,4 +64,5 @@ let content = [
       img: "mfz/rocketswordsman.png",
       link: "https://studio.bricklink.com/v2/build/model.page?idModel=48368"
     }
-  ];
+  ]
+};

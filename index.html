@@ -16,20 +16,48 @@
       <a href="https://www.instagram.com/caseyorigami/"> Instagram </a>
       <a href="https://studio.bricklink.com/v2/build/user.page?idBuilder=900802"> BrickLink </a>
     </div>
-    <main id="list">
-      
-      <iframe src="" width="800" height="800" name="popup"></iframe>
+
+    <main id="main">
+
+    <portfolio
+      id="main"
+      v-bind:entries="content" >
+    </portfolio>
+    
+    <!-- <entry
+      v-for="item in content"
+      v-bind:title="item.title"
+      v-bind:summary="item.summary"
+      v-bind:tags="item.tags"
+      v-bind:link="item.link"
+      v-bind:img="item.img">
+    </entry> -->
+
     </main>
     <script src="https://unpkg.com/vue"></script>
     <script src="list.js"></script>
     <script src="content.js"></script>
+    
     <script type="text/javascript">
+
       let main = new Vue({
-        el: "main",
+
+        el: "#main",
+        
         data: {
-          query: '',
-        }
+          content: getContent()
+        },
+
+        // created: function () {
+        //   content = getContent();
+        //   // for( n in content )
+        //   //   content[n].key = n;
+
+        //   // console.log( content );
+        // }
+
       });
     </script>
-  </body>
+
+</body>
 </html>
