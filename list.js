@@ -36,7 +36,7 @@ Vue.component( 'portfolio', {
         v-bind:img="item.img">
       </entry>
       
-      <iframe v-if="visible"
+      <iframe v-show="visible"
         name="display"
         :src="url"
         height="70%" width="70%"
@@ -68,7 +68,7 @@ Vue.component( 'entry', {
 
   template:
   `<article>
-    <header :id="name">
+    <header>
 
       <img
         :src="img"
