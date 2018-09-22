@@ -59,8 +59,8 @@ section {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content:flex-start; /* space-around;*/
-  align-items: center;
+  justify-content: space-around;
+  /* align-items: center; */
   border-left: solid 10px #CCC;
   background-color: #888;
   margin: 10px;

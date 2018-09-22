@@ -6,7 +6,7 @@ getContent = function () {
       summary:"An origami dragon of high intermediate complexity. All fold angles are multiples of 22.5 degrees and relatively few folds are more than 2-ply. This makes it easier to retain accuracy and fold from a small square. The long limbs also make a variety of poses possible.",
       tags: ['origami', 'uniaxial', '12.5', 'dragon'],
       img:"dragon/dragon.svg",
-      link:"dragon/index.html"
+      link:"https://caseyshields.github.io/dragon/"
     }, {
       title:"Light Tank",
       name:"tank",
@@ -27,14 +27,14 @@ getContent = function () {
       summary:"Mobile Frame Zero is a miniatures war game where you use your legos to build terrain, robots, weapons and inventory. This mobile frame has a beam rifle and jet pack.",
       tags:['lego', 'MFZ', 'games'],
       img:"beamtrooper/beamtrooper.png",
-      link:"beamtrooper/index.html"
+      link:"https://studio.bricklink.com/v2/build/model.page?idModel=44830"
     },{
       title: "Trie Example",
       name: "trie",
       summary: "An example of D3's force layout. Type words into the box and hit enter to add them to the trie. Or just press enter to add default inputs.",
       tags: ['D3', 'trie', 'code'],
       img: "trie/trie.svg",
-      link: "trie/index.html"
+      link: "https://caseyshields.github.io/trie/"
     },{
       title: "Henderson City Hall Gallery",
       name: "cityhall",
@@ -55,7 +55,7 @@ getContent = function () {
       summary: "Playing around with projections in D3 using the FK6 star catalog.",
       tags: ['D3', 'astronomy', 'FK6', 'code'],
       img: "starlog/stars.png",
-      link: "https://caseyshields.github.io/starmap/index.html"
+      link: "https://caseyshields.github.io/starmap/"
     },{
       title: "MFZ Rocket Swordsman",
       name: "rocketswordsman",

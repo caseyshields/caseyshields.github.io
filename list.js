@@ -25,26 +25,25 @@ Vue.component( 'portfolio', {
   },
 
   template:
-  `<div>
+  `<main>
+  <entry
+      v-for="item in entries"
+      v-bind:title="item.title"
+      v-bind:summary="item.summary"
+      v-bind:tags="item.tags"
+      v-bind:link="item.link"
+      v-bind:img="item.img">
+    </entry>
+    
+    <iframe v-show="visible"
+      name="display"
+      :src="url"
+      height="70%" width="70%"
+      scrolling="yes" frameborder="5">
+    </iframe>
 
-      <entry
-        v-for="item in entries"
-        v-bind:title="item.title"
-        v-bind:summary="item.summary"
-        v-bind:tags="item.tags"
-        v-bind:link="item.link"
-        v-bind:img="item.img">
-      </entry>
-      
-      <iframe v-show="visible"
-        name="display"
-        :src="url"
-        height="70%" width="70%"
-        scrolling="yes" frameborder="5">
-      </iframe>
-
-      <slot></slot>
-  </div>`
+    <slot></slot>
+    </main>`
 });
 
 // A component which displays the metadata of a portfolio entry
