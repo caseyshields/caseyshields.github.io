@@ -43,20 +43,23 @@ Vue.component( 'portfolio', {
       v-on:show="set($event)">
     </entry>
     
-    <section
+    <div
       class="modal"
       v-show="visible">
+
       <iframe
         name="modal"
         :src="url"
-        height="70%" width="70%"
-        scrolling="yes" frameborder="5"
+        scrolling="yes"
+        frameborder="5"
         v-on:load="show()">
       </iframe>
+
       <button v-on:click="hide()">
         close
       </button>
-    </section>
+
+    </div>
 
     <slot></slot>
     </main>`
