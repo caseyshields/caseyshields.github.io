@@ -15,17 +15,14 @@ Vue.component( 'portfolio', {
 
   methods: {
     show: function(link) {
-      console.log(link);
-      url = link;
-      visible = true;
+      console.log("show("+link+")");
+      this.url = link;
+      this.visible = true;
     },
 
     hide: function() {
-      visible = true;
-    },
-
-    test: function(value) {
-      console.log("testing:"+value);
+      console.log("hide()");
+      this.visible = false;
     }
   },
 
@@ -38,17 +35,17 @@ Vue.component( 'portfolio', {
       v-bind:tags="item.tags"
       v-bind:link="item.link"
       v-bind:img="item.img"
-      v-on:show="test($event)">
+      v-on:show="show($event)">
     </entry>
     
-    <section v-show="visible">
-      <iframe>
+    <section v-show="visible" position="absolute">
+      <iframe
         name="modal"
         :src="url"
         height="70%" width="70%"
         scrolling="yes" frameborder="5">
       </iframe>
-      <button v-on:click="hide">
+      <button v-on:click="hide()">
         close
       </button>
     </section>
@@ -82,7 +79,7 @@ Vue.component( 'entry', {
         :src="img"
         width="200px"
         height="200px"
-        v-on:click="$emit('show', 'test')">
+        v-on:click="$emit('show', link)">
 
       <a :href="link">
         <h1> {{message}} {{title}} </h1>
