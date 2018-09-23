@@ -67,8 +67,6 @@ Vue.component( 'entry', {
 
   template:
   `<article>
-    <header>
-
       <img
         :src="img"
         width="200px"
@@ -86,8 +84,6 @@ Vue.component( 'entry', {
           <em> {{tag}} </em>
         </li>
       </ul>
-
-    </header>
   </article>`
 
 });

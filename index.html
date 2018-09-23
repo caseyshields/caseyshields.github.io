@@ -6,7 +6,7 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet"> -->
   </head>
   <body>
-    <div class="banner">
+    <header>
       <h2>Casey Shields</h2>
       <a href="https://github.com/caseyshields/"> Github </a>
       <a href="https://www.etsy.com/shop/CaseyOrigami"> Etsy </a>
@@ -15,7 +15,7 @@
       <a href="https://www.pinterest.com/caseyorigami/"> Pinterest </a>
       <a href="https://www.instagram.com/caseyorigami/"> Instagram </a>
       <a href="https://studio.bricklink.com/v2/build/user.page?idBuilder=900802"> BrickLink </a>
-    </div>
+    </header>
 
     <div id="vue">
       <portfolio v-bind:entries="content" >
@@ -23,7 +23,7 @@
     </div>
 
     <script src="https://unpkg.com/vue"></script>
-    <script src="list.js"></script>
+    <script src="portfolio.js"></script>
     <script src="content.js"></script>
     <script type="text/javascript">
       let main = new Vue({
