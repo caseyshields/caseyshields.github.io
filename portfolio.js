@@ -15,12 +15,17 @@ Vue.component( 'portfolio', {
 
   methods: {
     show: function(link) {
+      console.log(link);
       url = link;
       visible = true;
     },
 
     hide: function() {
       visible = true;
+    },
+
+    test: function(value) {
+      console.log("testing:"+value);
     }
   },
 
@@ -32,15 +37,21 @@ Vue.component( 'portfolio', {
       v-bind:summary="item.summary"
       v-bind:tags="item.tags"
       v-bind:link="item.link"
-      v-bind:img="item.img">
+      v-bind:img="item.img"
+      v-on:show="test($event)">
     </entry>
     
-    <iframe v-show="visible"
-      name="display"
-      :src="url"
-      height="70%" width="70%"
-      scrolling="yes" frameborder="5">
-    </iframe>
+    <section v-show="visible">
+      <iframe>
+        name="modal"
+        :src="url"
+        height="70%" width="70%"
+        scrolling="yes" frameborder="5">
+      </iframe>
+      <button v-on:click="hide">
+        close
+      </button>
+    </section>
 
     <slot></slot>
     </main>`
@@ -71,9 +82,9 @@ Vue.component( 'entry', {
         :src="img"
         width="200px"
         height="200px"
-        v-on:click="$emit('display')">
+        v-on:click="$emit('show', 'test')">
 
-      <a :href="link" target="display">
+      <a :href="link">
         <h1> {{message}} {{title}} </h1>
       </a>
 
@@ -85,7 +96,9 @@ Vue.component( 'entry', {
         </li>
       </ul>
   </article>`
-
+  //v-on:click="$emit('show', link)">
+  //v-on:click="$emit('display')"
+//<a :href="link" target="display">
 });
 
 // TODO extract this auto resizing iframe; could be useful...
