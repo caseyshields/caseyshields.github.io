@@ -14,15 +14,20 @@ Vue.component( 'portfolio', {
   },
 
   methods: {
-    show: function(link) {
-      console.log("show("+link+")");
+    set: function(link) {
+      console.log("set("+link+")");
       this.url = link;
+    },
+    show: function() {
+      console.log("show()");
       this.visible = true;
     },
-
     hide: function() {
       console.log("hide()");
       this.visible = false;
+    },
+    test: function() {
+      console.log('test');
     }
   },
 
@@ -35,15 +40,18 @@ Vue.component( 'portfolio', {
       v-bind:tags="item.tags"
       v-bind:link="item.link"
       v-bind:img="item.img"
-      v-on:show="show($event)">
+      v-on:show="set($event)">
     </entry>
     
-    <section v-show="visible" position="absolute">
+    <section
+      class="modal"
+      v-show="visible">
       <iframe
         name="modal"
         :src="url"
         height="70%" width="70%"
-        scrolling="yes" frameborder="5">
+        scrolling="yes" frameborder="5"
+        v-on:load="show()">
       </iframe>
       <button v-on:click="hide()">
         close
