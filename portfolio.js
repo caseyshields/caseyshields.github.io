@@ -16,11 +16,15 @@ Vue.component( 'portfolio', {
   methods: {
     set: function(link) {
       console.log("set("+link+")");
-      this.url = link;
+      if(this.url==link)
+        this.show();
+      else
+        this.url = link;
     },
     show: function() {
       console.log("show()");
-      this.visible = true;
+      if(this.url!='')
+        this.visible = true;
     },
     hide: function() {
       console.log("hide()");
