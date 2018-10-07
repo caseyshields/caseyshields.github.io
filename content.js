@@ -3,9 +3,10 @@ getContent = function () {
     {
       title:"Western Dragon",
       summary:"An origami dragon of high intermediate complexity. All fold angles are multiples of 22.5 degrees and relatively few folds are more than 2-ply. This makes it easier to retain accuracy and fold from a small square. The long limbs also make a variety of poses possible.",
-      tags: ['origami', 'uniaxial', '12.5', 'dragon'],
+      tags: ['origami', 'uniaxial', '22.5', 'dragon'],
       img:"img/dragon_CP.svg",
       link:"https://caseyshields.github.io/dragon/"
+      // TODO add a list of dates to each entry...
     }, {
       title:"Light Tank",
       summary:"A lego mech which transforms into a light wheeled tank based on the Japanese MCV Type 16. Working gun and mortars are usable in both robot and vehicle mode. Originally released on the old brick link MOC pages.",
@@ -50,7 +51,7 @@ getContent = function () {
       link: "https://caseyshields.github.io/starmap/"
     },{
       title: "MFZ Rocket Swordsman",
-      summary: "Made another figurine for MF0. Rocket propelled swordsman. I can't really elaborate more.",
+      summary: "Made another figurine for MF0. Rocket propelled swordsman.",
       tags: ['MFZ','lego','mech'],
       img: "img/rocketswordsman.png",
       link: "https://studio.bricklink.com/v2/build/model.page?idModel=48368"

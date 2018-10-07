@@ -15,24 +15,21 @@ Vue.component( 'portfolio', {
 
   methods: {
     set: function(link) {
-      console.log("set("+link+")");
+      //console.log("set("+link+")");
       if(this.url==link)
         this.show();
       else
         this.url = link;
     },
     show: function() {
-      console.log("show()");
+      //console.log("show()");
       if(this.url!='')
         this.visible = true;
     },
     hide: function() {
-      console.log("hide()");
+      //console.log("hide()");
       this.visible = false;
     },
-    test: function() {
-      console.log('test');
-    }
   },
 
   template:
@@ -92,8 +89,6 @@ Vue.component( 'entry', {
   `<article>
       <img
         :src="img"
-        width="200px"
-        height="200px"
         v-on:click="$emit('show', link)">
 
       <a :href="link">
