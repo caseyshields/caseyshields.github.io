@@ -55,6 +55,12 @@ getContent = function () {
       tags: ['MFZ','lego','mech'],
       img: "img/rocketswordsman.png",
       link: "https://studio.bricklink.com/v2/build/model.page?idModel=48368"
+    }, {
+      title: "Polar Plot",
+      summary: "Quick demo of a simple polar plot component. Exercises some mouse limited interactivity and gives some css styling ideas.",
+      tags: ['D3', 'polar', 'code'],
+      img: "img/polar.svg",
+      link: "https://caseyshields.github.io/polar/"
     }
   ]
 };
