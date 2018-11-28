@@ -61,6 +61,18 @@ getContent = function () {
       tags: ['D3', 'polar', 'code'],
       img: "img/polar.svg",
       link: "https://caseyshields.github.io/polar/"
+    }, {
+      title: "Nevada",
+      summary: "Made a layered vector map component with D3.",
+      tags: ['D3', 'maps', 'code'],
+      img: 'img/nevada.svg',
+      link: "https://caseyshields.github.io/nevada/"
+    }, {
+      title: "MFZ Scout",
+      summary: "Mobile Frame Zero scouting mech with a sniper rifle.",
+      tags: ['MFZ', 'lego', 'mech'],
+      img: "img/sniperscout.png",
+      link: "https://studio.bricklink.com/v2/build/model.page?idModel=65471"
     }
   ]
 };
