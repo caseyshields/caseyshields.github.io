@@ -73,6 +73,12 @@ getContent = function () {
       tags: ['MFZ', 'lego', 'mech'],
       img: "img/sniperscout.png",
       link: "https://studio.bricklink.com/v2/build/model.page?idModel=65471"
+    }, {
+      title: "MFZ Pistoleer",
+      summary: "Mobile Frame with enhanced sensors and dual pistols.",
+      tags: ['MFZ', 'lego', 'mech'],
+      img: "img/pistoleer.png",
+      link: "https://studio.bricklink.com/v2/build/model.page?idModel=66607"
     }
   ]
 };
