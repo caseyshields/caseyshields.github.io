@@ -24,7 +24,7 @@ getContent = function () {
       summary:"Mobile Frame Zero is a miniatures war game where you use your legos to build terrain, robots, weapons and inventory. This mobile frame has a beam rifle and jet pack.",
       tags:['lego', 'MFZ', 'games'],
       img:"img/beamtrooper.png",
-      link:"https://studio.bricklink.com/v2/build/model.page?idModel=44830"
+      link: "https://www.bricklink.com/v3/studio/design.page?idModel=44830"
     },{
       title: "Trie Example",
       summary: "An example of D3's force layout. Type words into the box and hit enter to add them to the trie. Or just press enter to add default inputs.",
@@ -54,7 +54,8 @@ getContent = function () {
       summary: "Made another figurine for MF0. Rocket propelled swordsman.",
       tags: ['MFZ','lego','mech'],
       img: "img/rocketswordsman.png",
-      link: "https://studio.bricklink.com/v2/build/model.page?idModel=48368"
+      link: "https://www.bricklink.com/v3/studio/design.page?idModel=48368"
+      
     }, {
       title: "Polar Plot",
       summary: "Quick demo of a simple polar plot component. Exercises some mouse limited interactivity and gives some css styling ideas.",
@@ -72,13 +73,13 @@ getContent = function () {
       summary: "Mobile Frame Zero scouting mech with a sniper rifle.",
       tags: ['MFZ', 'lego', 'mech'],
       img: "img/sniperscout.png",
-      link: "https://studio.bricklink.com/v2/build/model.page?idModel=65471"
+      link: "https://www.bricklink.com/v3/studio/design.page?idModel=65471"
     }, {
       title: "MFZ Pistoleer",
       summary: "Mobile Frame with enhanced sensors and dual pistols.",
       tags: ['MFZ', 'lego', 'mech'],
       img: "img/pistoleer.png",
-      link: "https://studio.bricklink.com/v2/build/model.page?idModel=66607"
+      link: "https://www.bricklink.com/v3/studio/design.page?idModel=66607"
     }
   ]
 };
