@@ -86,23 +86,23 @@ Vue.component( 'entry', {
   },
 
   template:
-  `<article>
+  `<section>
+      <a :href="link">
+        <h1> {{title}} </h1>
+      </a>
+      
       <img
         :src="img"
         v-on:click="$emit('show', link)">
 
-      <a :href="link">
-        <h1> {{message}} {{title}} </h1>
-      </a>
-
-      <span> {{summary}} </span>
+      <!--<span> {{summary}} </span>-->
       
       <ul>
         <li v-for='tag in tags'>
-          <em> {{tag}} </em>
+          {{tag}}
         </li>
       </ul>
-  </article>`
+  </section>`
   //v-on:click="$emit('show', link)">
   //v-on:click="$emit('display')"
 //<a :href="link" target="display">
