@@ -32,7 +32,7 @@ getContent = function () {
       img: "img/trie.svg",
       link: "https://caseyshields.github.io/trie/"
     },{
-      title: "Henderson City Hall Gallery",
+      title: "Henderson Gallery",
       summary: "Part of the submission process for the gallery in Henderson's city hall is an artist statement. I've been thinking about some of this stuff for awhile and I think I summed up my thoughts okay. But is it pretentious enough? I really need to distract from my terrible photography.",
       tags: ['origami', 'essay', 'art'],
       img: "cityhall/hallDualFrames.JPG",
@@ -50,7 +50,7 @@ getContent = function () {
       img: "img/stars.png",
       link: "https://caseyshields.github.io/starmap/"
     },{
-      title: "MFZ Rocket Swordsman",
+      title: "Rocket Swordsman",
       summary: "Made another figurine for MF0. Rocket propelled swordsman.",
       tags: ['MFZ','lego','mech'],
       img: "img/rocketswordsman.png",
@@ -69,13 +69,13 @@ getContent = function () {
       img: 'img/nevada.svg',
       link: "https://caseyshields.github.io/nevada/"
     }, {
-      title: "MFZ Scout",
+      title: "Scout",
       summary: "Mobile Frame Zero scouting mech with a sniper rifle.",
       tags: ['MFZ', 'lego', 'mech'],
       img: "img/sniperscout.png",
       link: "https://www.bricklink.com/v3/studio/design.page?idModel=65471"
     }, {
-      title: "MFZ Pistoleer",
+      title: "Pistoleer",
       summary: "Mobile Frame with enhanced sensors and dual pistols.",
       tags: ['MFZ', 'lego', 'mech'],
       img: "img/pistoleer.png",
