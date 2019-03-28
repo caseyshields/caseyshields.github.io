@@ -97,7 +97,7 @@ Vue.component( 'entry', {
       
       <ul>
         <li v-for='tag in tags'>
-          {{tag}}
+          -{{tag}}
         </li>
       </ul>
   </section>`
