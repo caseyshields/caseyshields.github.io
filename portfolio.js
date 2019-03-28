@@ -88,12 +88,11 @@ Vue.component( 'entry', {
   template:
   `<section>
       <!-- <a :href="link"> -->
-        <h1> {{title}} </h1>
+        <p> {{title}} </p>
       
       <img
         :src="img"
         v-on:click="$emit('show', link)">
-
       <!--<span> {{summary}} </span>-->
       
       <ul>

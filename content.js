@@ -80,6 +80,12 @@ getContent = function () {
       tags: ['MFZ', 'lego', 'mech'],
       img: "img/pistoleer.png",
       link: "https://www.bricklink.com/v3/studio/design.page?idModel=66607"
+    }, {
+      title: "Dragon Tutorial",
+      summary: "A first attempt at making an origami tutorial.",
+      tags: ['origami', 'youtube', 'dragon'],
+      img: "img/dragon.svg",
+      link: "https://youtu.be/kOzWXQF8Z68"
     }
   ]
 };
