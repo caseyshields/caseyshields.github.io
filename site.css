@@ -23,6 +23,7 @@ header {
 
 main {
   padding-top: 64px;
+  padding-bottom: 128px;
   padding-left: 128px;
   padding-right: 128px;
   display: grid;
@@ -38,8 +39,8 @@ main {
 section {
     /* position: relative; */
     display: grid;
-    grid-template-rows: 1em 1fr;
-    grid-template-columns: 1fr 1em;
+    grid-template-rows: 2em auto;
+    grid-template-columns: auto 2em;
     /* background-color: grey; */
     overflow: hidden;
 }
@@ -47,6 +48,7 @@ section > p {
     /* position: absolute;
     top: 5%;
     left: 5%;*/
+    align-self: center;
     grid-area: 1 / 1 / 2 / 3;
 }
 section > image {
@@ -61,6 +63,7 @@ section > ul {
     grid-area: 2 / 2 / 3 / 3;
     writing-mode: vertical-lr;
     align-self: end;
+    justify-self: center;
     /* position: absolute;
     bottom: 5%;
     right: 5%;*/
