@@ -32,12 +32,12 @@ getContent = function () {
       img: "img/trie.svg",
       link: "https://caseyshields.github.io/trie/"
     },{
-      title: "Henderson Gallery",
-      summary: "Part of the submission process for the gallery in Henderson's city hall is an artist statement. I've been thinking about some of this stuff for awhile and I think I summed up my thoughts okay. But is it pretentious enough? I really need to distract from my terrible photography.",
-      tags: ['origami', 'essay', 'art'],
-      img: "cityhall/hallDualFrames.JPG",
-      link: "cityhall/index.html"
-    },{
+    //   title: "Henderson Gallery",
+    //   summary: "Part of the submission process for the gallery in Henderson's city hall is an artist statement. I've been thinking about some of this stuff for awhile and I think I summed up my thoughts okay. But is it pretentious enough? I really need to distract from my terrible photography.",
+    //   tags: ['origami', 'essay', 'art'],
+    //   img: "cityhall/hallDualFrames.JPG",
+    //   link: "cityhall/index.html"
+    // },{
       title: "Ladder Diagrams",
       summary: "An attempt to make a re-usable D3 component for ladder diagrams.",
       tags: ['D3', 'ladder', 'component'],

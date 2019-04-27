@@ -86,7 +86,7 @@ Vue.component( 'entry', {
   },
 
   template:
-  `<section>
+  `<article>
       <!-- <a :href="link"> -->
         <p> {{title}} </p>
       
@@ -100,7 +100,7 @@ Vue.component( 'entry', {
           -{{tag}}
         </li>
       </ul>
-  </section>`
+  </article>`
   //v-on:click="$emit('show', link)">
   //v-on:click="$emit('display')"
 //<a :href="link" target="display">
