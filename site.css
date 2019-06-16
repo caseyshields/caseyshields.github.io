@@ -19,7 +19,7 @@ header {
     grid-auto-flow: column;
     align-items: center;
     
-    background-color: #888;
+    background-color: darkgrey;
     padding: 10px;
     z-index: 9001;
     /* border-bottom: solid 10px #CCC; */
@@ -38,15 +38,15 @@ main {
   grid-column-gap: 64px;
   grid-row-gap: 64px;
 
-  background-color: darkgray;
+  background-color: gray;
 }
 
 article {
     /* position: relative; */
 
     display: grid;
-    grid-template-rows: 2em auto;
-    grid-template-columns: auto 2em;
+    grid-template-rows: 3em auto;
+    grid-template-columns: auto 3em;
     overflow: hidden;
 
     /* transform: rotate(15deg); */
@@ -55,22 +55,25 @@ article > p {
     /* position: absolute;
     top: 5%;
     left: 5%;*/
-    
+    background: darkgrey;
+    border-radius: 5px;
+    padding: 5px;
     align-self: center;
-    grid-area: 1 / 1 / 2 / 3;
+    grid-area: 1 / 1 / 2 / 2;
 }
 article > img {
     grid-area: 2 / 1 / 3 / 2;
-    height : calc( 100% - 2em);
+    height : calc( 100% - 3em);
     width : 100%;
     overflow : hidden;
-    background-color: grey;
+    background-color: darkgrey;
+    border-radius: 5px;
 }
 
 article > ul {
   grid-area: 2 / 2 / 3 / 3;
   writing-mode: vertical-lr;
-  align-self: end;
+  align-self: flex-start;
   justify-self: center;
   /* position: absolute;
   bottom: 5%;
@@ -79,6 +82,9 @@ article > ul {
 
 article li {
     display: inline;
+    background: darkgrey;
+    border-radius: 5px;
+    padding: 5px;
     /* display: list-item; */
     /* list-style-type: disc; */
 }

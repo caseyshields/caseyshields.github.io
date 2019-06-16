@@ -3,7 +3,7 @@ getContent = function () {
     {
       title:"Western Dragon",
       summary:"An origami dragon of high intermediate complexity. All fold angles are multiples of 22.5 degrees and relatively few folds are more than 2-ply. This makes it easier to retain accuracy and fold from a small square. The long limbs also make a variety of poses possible.",
-      tags: ['origami', 'uniaxial', '22.5', 'dragon', 'tutorial'],
+      tags: ['origami', 'dragon', 'tutorial'],
       img:"img/dragon_CP.svg",
       link:"https://caseyshields.github.io/dragon/"
       // TODO add a list of dates to each entry...

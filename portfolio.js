@@ -87,8 +87,9 @@ Vue.component( 'entry', {
 
   template:
   `<article>
-      <!-- <a :href="link"> -->
-        <p> {{title}} </p>
+      <p><a :href="link">
+        {{title}}
+      </a></p>
       
       <img
         :src="img"
