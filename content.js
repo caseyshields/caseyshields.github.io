@@ -91,6 +91,13 @@ getContent = function () {
       summary: "Working through some examples from Ukkonen's lectures on suffix trees.",
       tags: ['algorithms', 'trie', 'D3'],
       link: "https://caseyshields.github.io/suffix"
+    }, {
+      title: "Transforming A-10",
+      summary: "A Lego robot that transforms into an A10.",
+      tags: ['lego', 'transformer', 'thunderbolt'],
+      img: "img/thunderbolt.png",
+      link: "https://youtu.be/I3Kuy6UzUWA"
     }
+
   ]
 };
