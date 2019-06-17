@@ -96,7 +96,7 @@ getContent = function () {
       summary: "A Lego robot that transforms into an A10.",
       tags: ['lego', 'transformer', 'thunderbolt'],
       img: "img/thunderbolt.png",
-      link: "https://youtu.be/I3Kuy6UzUWA"
+      link: "https://rebrickable.com/mocs/MOC-25799/deceptibot/transforming-a10-thunderbolt/"
     }
 
   ]
